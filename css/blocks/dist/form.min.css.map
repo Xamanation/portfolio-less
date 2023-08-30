@@ -1,0 +1,1 @@
+{"version":3,"sources":["form.less"],"names":[],"mappings":"AAEA,aACI,cAAA","file":"form.min.css","sourcesContent":["// main: ../style.less\r\n\r\n.form__group {\r\n    margin-bottom: 1.8rem;\r\n}"]}

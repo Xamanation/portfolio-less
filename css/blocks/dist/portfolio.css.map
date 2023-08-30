@@ -1,0 +1,1 @@
+{"version":3,"sources":["portfolio.less"],"names":[],"mappings":"AACA;EACE,aAAA;EACA,eAAA;EACA,sBAAA;;AAGF;EACE,sBAAA;EACA,aAAA","sourcesContent":["// main: ../style.less\r\n.portfolio {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  margin: 0 -1rem 2.8rem;\r\n}\r\n\r\n.portfolio__col {\r\n  flex-basis: 33.333333%;\r\n  padding: 1rem;\r\n\r\n}"],"file":"portfolio.css"}

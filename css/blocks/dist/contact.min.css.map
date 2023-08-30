@@ -1,0 +1,1 @@
+{"version":3,"sources":["contact.less"],"names":[],"mappings":"AAEA,SACI,QAAA,KAGJ,cACI,MAAA,IAEJ,eACI,MAAA","file":"contact.min.css","sourcesContent":["// main: ../style.less\r\n\r\n.contact {\r\n    display: flex;\r\n}\r\n\r\n.contact-left{\r\n    width: 47%;\r\n}\r\n.contact-right {\r\n    width: 53%;\r\n    \r\n}"]}
