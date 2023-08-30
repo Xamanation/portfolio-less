@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="css/style.css"
+  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   </head>
 <body>
  <header class="header">
@@ -17,7 +18,7 @@
 
     <div class="user">
       <div class="user__avatar">
-        <img src="img/red" alt="">
+        <img src="img/r" alt="">
       </div>
       <div class="user__content">
         <div class="user__name">
@@ -32,7 +33,7 @@
       <a class="nav__link" href="#">Работы</a>
       <a class="nav__link" href="#">О бо мне</a>
       <a class="nav__link" href="#">Контакты</a>
-      <a class="nav__link  nav__link--btn" href="#">Связаться</a>
+      <a class="nav__link  nav__link--btn" href="#" data-modal="#modal_hire_me">Связаться</a>
     </nav>
   </div>
 </div>
@@ -45,7 +46,7 @@
       <div class="intro__content">
         <H2 class="intro__subtitle">Привет! Я</H2>
         <h1 class="intro__title">Комарин Артем</h1>
-        <div class="intro__text">Frontend</div>
+        <div class="intro__text"> </div>
 
       <div class="social">
              <a class="social__link" target="_blank" href="#">
@@ -65,7 +66,7 @@
               </a>
 
     </div>
-    <a class="btn" href="#">Связаться со мной</a>
+    <a class="btn" href="#" data-modal="#modal_hire_me">Связаться со мной</a>
     <button class="btn" type="button" href="#">Мое резюме</button>
   </div>
 <img class="intro__photo" src="img/4-1-removebg.png" alt="">
@@ -77,45 +78,68 @@
 <div class="works">
   <div class="container">
 <div class="works__nav">
-  <a class="works__nav-link" href="#" >Все</a>
-  <a class="works__nav-link" href="#" >Приложения</a>
-  <a class="works__nav-link" href="#" >Веб-сайты</a>
-  <a class="works__nav-link" href="#" >Interactions</a>
-</div>
+  <a class="works__nav-link" href="#" data-filter="all" >Все</a>
+  <a class="works__nav-link" href="#" data-filter="app">Приложения</a>
+  <a class="works__nav-link" href="#" data-filter="website" >Веб-сайты</a>
+  </div>
 
-<div class="portfolio">
-  <div class="portfolio__col">
-    <div class="work">
-  <img class="work__image" src="https://place-hold.it/370x300" alt="">
+<div class="portfolio" id="portfolio">
+  <div class="portfolio__col" data-cat="website">
+    <div class="work" data-modal="#modal_project_1">
+  <img class="work__image" src="img/system-voda.png" alt="">
      <div class="work__content">
-       <div class="work__cat">Категория</div>
+       <div class="work__cat">Веб-сайты</div>
        <div class="work__title">
-         Название проекта
-         <time class="work__date" datetime="2022-03-23">2020</time> 
+         Системы очистки воды
+         <time class="work__date" datetime="2022-03-23">2023</time> 
        </div>  
       </div>
     </div>
   </div>
-  <div class="portfolio__col">
-    <div class="work">
-  <img class="work__image" src="https://place-hold.it/370x300" alt="">
+  <div class="portfolio__col" data-cat="website">
+    <div class="work" data-modal="#modal_project_2">
+  <img class="work__image" src="img/otoplenie.png" alt="">
      <div class="work__content">
-       <div class="work__cat">Категория</div>
+       <div class="work__cat">Веб-сайты</div>
        <div class="work__title">
-         Название проекта
-         <time class="work__date" datetime="2022-03-23">2020</time> 
+         Монтаж отопления
+         <time class="work__date" datetime="2022-03-23">2022</time> 
        </div>  
       </div>
     </div>
   </div>
-  <div class="portfolio__col">
-    <div class="work">
-  <img class="work__image" src="https://place-hold.it/370x300" alt="">
+  <div class="portfolio__col" data-cat="website">
+    <div class="work" data-modal="#modal_project_3">
+  <img class="work__image" src="img/ampirek.png" alt="">
      <div class="work__content">
-       <div class="work__cat">Категория</div>
+       <div class="work__cat">Веб-сайты</div>
        <div class="work__title">
-         Название проекта
-         <time class="work__date" datetime="2022-03-23">2020</time> 
+         Металопрокат
+         <time class="work__date" datetime="2022-03-23">2021</time> 
+       </div>  
+      </div>
+    </div>
+  </div>
+  <div class="portfolio__col" data-cat="website">
+    <div class="work" data-modal="#modal_project_4">
+  <img class="work__image" src="img/atelie.png" alt="">
+     <div class="work__content">
+       <div class="work__cat">Веб-сайты</div>
+       <div class="work__title">
+         Ателье
+         <time class="work__date" datetime="2022-03-23">2022</time> 
+       </div>  
+      </div>
+    </div>
+  </div>
+  <div class="portfolio__col" data-cat="app">
+    <div class="work" data-modal="#modal_project_5">
+  <img class="work__image" src="img/futureapp.png" alt="">
+     <div class="work__content">
+       <div class="work__cat">Приложения</div>
+       <div class="work__title">
+         Приложение еще не сделано
+         <time class="work__date" datetime="2023-12-31">202X</time> 
        </div>  
       </div>
     </div>
@@ -137,12 +161,28 @@
         <h3 class="about__title">Про меня</h3>
         <h2 class="about__bigtitle">Кто я такой</h2>
         <div class="about__text">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa architecto ex itaque illum, exercitationem quisquam asperiores? Ipsa in reprehenderit quisquam, vero libero saepe nobis at tenetur iure quos eligendi omnis.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa architecto ex itaque illum, exercitationem quisquam asperiores? Ipsa in reprehenderit quisquam, vero libero saepe nobis at tenetur iure quos eligendi omnis.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa architecto ex itaque illum, exercitationem quisquam asperiores? Ipsa in reprehenderit quisquam, vero libero saepe nobis at tenetur iure quos eligendi omnis.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa architecto ex itaque illum, exercitationem quisquam asperiores? Ipsa in reprehenderit quisquam, vero libero saepe nobis at tenetur iure quos eligendi omnis.</p>
+          <div class="aboutme__text">
+            <ul class="about__ul">
+              <li>Мужчина, 30 лет, родился 25 мая 1993</li>
+              <li>📞 +7 (952) 7300088</li>
+              <li>📧 xamanation93@yandex.ru</li>
+              <li>🏠 <b>Проживает:</b> Екатеринбург, м. Проспект Космонавтов</li>
+              <li>🌍 <b>Гражданство:</b>  Россия, разрешение на работу: Россия</li>
+              <li>🚫 Не готов к переезду, не готов к командировкам</li>
+          </ul>
+          
+          <ul class="about__ul">
+              <li>🎯<b> Желаемые должности:</b>  Администратор информационной системы, Менеджер IT-продукта, Администратор проектов</li>
+              <li>💰<b> Желаемая зарплата:</b>  80 000 ₽</li>
+              <li>🔍 <b>Специализации:</b>  Другое</li>
+              <li>🕐 <b>Занятость:</b>  полная</li>
+              <li>🗓 <b>График работы:</b>  полный день, удаленная работа</li>
+              <li>⏳ <b>Время в пути до работы:</b> не имеет значения</li>
+          </ul>
+          </div>
+          
         </div>
-        <a class="btn" href="#">Связаться со мной</a>
+        <a class="btn" href="#" data-modal="#modal_hire_me">Связаться со мной</a>
     <button class="btn" type="button" href="#">Мое резюме</button>
       </div>
     </div>
@@ -153,7 +193,7 @@
   <div class="container">
 <div class="reviews_item">
   <div class="reviews_text">
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem nemo numquam, reiciendis, unde iusto ex architecto sit at fugit aspernatur dolore enim quae harum laboriosam, vitae dolorum officia odit voluptatibus?</p>
+    <p>Артем проявила выдающийся профессионализм в создании двух веб-платформ: одной, посвященной монтажу отопления, и второй, по установке систем очистки воды. Дизайн и навигация обоих сайтов оказались великолепно продуманными и информативными для потенциальных клиентов. Информация о предлагаемых услугах и преимуществах была представлена ясно и лаконично, что позволяет клиентам быстро ознакомиться с предложениями.</p>
   </div>
   <div class="reviews_author">
     <img class="reviews_photo" src="img/anton.jpeg" alt="">
@@ -164,7 +204,7 @@
       <img class="reviews_star" src="img/star.svg" alt="" width="13" height="13">
       <img class="reviews_star" src="img/star.svg" alt="" width="13" height="13">
       <img class="reviews_star" src="img/star.svg" alt="" width="13" height="13">
-      <img class="reviews_star reviews_star--unactive" src="img/star.svg" alt="" width="13" height="13">
+      <img class="reviews_star" src="img/star.svg" alt="" width="13" height="13">
     </div>
   </div>
 </div>
@@ -200,13 +240,268 @@
         <a href="" class="footer__nav-link">Работы</a>
         <a href="" class="footer__nav-link">О бо мне</a>
         <a href="" class="footer__nav-link">Контакты</a>
-        <a href="" class="footer__nav-link footer__nav-link--btn">Связаться со мной</a>
+        <a href="" class="footer__nav-link footer__nav-link--btn" data-modal="#modal_hire_me">Связаться со мной</a>
       </nav>
     </div>
   </div>
 </footer>
+<!---modals-->
+<!--modal 1-->
+<div id="modal_project_1" class="modal">
+  <div class="modal__dialog">
 
+    <button class="modal__close" type="button" data-close>
+      <img src="img/modal-close.svg" width="34" height="39" alt="close">
+    </button>
 
+    <div class="modal-work">
+      <div class="modal-work__prewiews">
+        <img class="modal-work__photo" src="img/sk vodootvod.png"  width="770" height="476" alt="">
+      </div>
+      <div class="modal-work__content">
+        <div class="modal-work__header">
+          <h3 class="modal-work__title">
+            Сайт по монтажу систем водоочистки
+          </h3>
+          <div class="modal-work__info">
+            Веб-сайты &nbsp; | &nbsp;  2023
+          </div>
+        </div>
+        <div class="modal-work__client">
+          <div><b>Панов Антон</b></div>
+          <div class="reviews_company">Системы комфорта</div>
+        </div>
+        <div class="modal-work__text">
+          <p>Сайт по монтажу систем очистки водоснабжения<br>
+            Сайт сделан на Конструкторе Flexbe, дизайн сайта был полностью отрисован с ноля, с помощью инструментов Figma и Adobe Illustrator. <br>
+            В будущем планируется доработка сайта, а именно добавление JS скриптов для подачи заявки в банк, для предоставления рассрочки. <br>
+            <ul>
+              <b>Сайт содержит в себе:</b> 
+              <li>Форму обратной связи</li>
+              <li>Калькулятор расчета стоимости установки</li>
+              <li>JS виджет-счетчик озывов с Flamp</li>
+              <li>Интерактивную яндекс карту</li>
+            </ul> 
+           </p>
+           <div class="modal__work-link">
+            <a href="https://xn---72-5cdjmjvswmeba0cqd7f3epb.xn--p1ai/" target="_blank" class="btn">Перейти на сайт</a>
+           </div>
+          </div>
+        <div class="modal-work__footer">
+          <button class="modal-work__btn" type="button">
+            <img class="modal-work__btn-arrow" src="img/arrow left.svg" height="12" alt="">
+            Предидущая
+          </button>
+          <button class="modal-work__btn" type="button">
+            Следующая
+            <img class="modal-work__btn-arrow" src="img/arrow_right.svg" height="12" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal 1-->
+<div id="modal_project_2" class="modal">
+  <div class="modal__dialog">
+
+    <button class="modal__close" type="button" data-close>
+      <img src="img/modal-close.svg" width="34" height="39" alt="close">
+    </button>
+
+    <div class="modal-work">
+      <div class="modal-work__prewiews">
+        <img class="modal-work__photo" src="img/sk otoplenie.png"  width="770" height="476" alt="">
+      </div>
+      <div class="modal-work__content">
+        <div class="modal-work__header">
+          <h3 class="modal-work__title">
+            Сайт по монтажу отопления
+          </h3>
+          <div class="modal-work__info">
+            Веб-сайты &nbsp; | &nbsp;  2022
+          </div>
+        </div>
+        <div class="modal-work__client">
+          <div><b>Панов Антон</b></div>
+          <div class="reviews_company">Системы комфорта</div>
+        </div>
+        <div class="modal-work__text">
+          <p>Сайт по монтажу систем очистки водоснабжения<br>
+          Сайт сделан на Конструкторе Flexbe, дизайн сайта был полностью отрисован с ноля, с помощью инструментов Figma и Adobe Illustrator. <br>
+          В будущем планируется доработка сайта, а именно добавление JS скриптов для подачи заявки в банк, для предоставления рассрочки. <br></p>
+                      <b>Сайт содержит в себе:</b> 
+            <li>Форму обратной связи</li>
+            <li>Калькулятор расчета стоимости установки</li>
+            <li>JS виджет-счетчик озывов с Flamp</li>
+            <li>Интерактивную яндекс карту</li>
+             <div class="modal__work-link">
+              <a href="https://xn---72-qddabswngfdao7bi7o6a.xn--p1ai/" target="_blank" class="btn">Перейти на сайт</a>
+             </div>     
+                </div>
+        <div class="modal-work__footer">
+          <button class="modal-work__btn" type="button">
+            <img class="modal-work__btn-arrow" src="img/arrow left.svg" height="12" alt="">
+            Предидущая
+          </button>
+          <button class="modal-work__btn" type="button">
+            Следующая
+            <img class="modal-work__btn-arrow" src="img/arrow_right.svg" height="12" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal_project_3" class="modal">
+  <div class="modal__dialog">
+
+    <button class="modal__close" type="button" data-close>
+      <img src="img/modal-close.svg" width="34" height="39" alt="close">
+    </button>
+
+    <div class="modal-work">
+      <div class="modal-work__prewiews">
+        <img class="modal-work__photo" src="img/ampir ek.png"  width="770" height="476" alt="">
+      </div>
+      <div class="modal-work__content">
+        <div class="modal-work__header">
+          <h3 class="modal-work__title">
+            Сайт по монтажу систем водоочистки
+          </h3>
+          <div class="modal-work__info">
+            Веб-сайты &nbsp; | &nbsp;  2021
+          </div>
+        </div>
+        <div class="modal-work__client">
+          <div><b>Комлеченко Сергей</b></div>
+          <div class="reviews_company">Ампир-Ек</div>
+        </div>
+        <div class="modal-work__text">
+          <p>Сайт по продаже труб и металопроката<br>
+            Сайт сделан в WordPress и Elementor, дизайн сайта был полностью отрисован с ноля, с помощью инструментов Figma и Adobe Illustrator. <br>
+            </p>
+                        <b>Сайт содержит в себе:</b> 
+              <li>Форму обратной связи</li>
+              <li>Интерактивную яндекс карту</li>
+               <div class="modal__work-link">
+                <a href="https://xn----7sbqkmivj.xn--p1ai/" target="_blank" class="btn">Перейти на сайт</a>
+               </div>
+          </div>
+        <div class="modal-work__footer">
+          <button class="modal-work__btn" type="button">
+            <img class="modal-work__btn-arrow" src="img/arrow left.svg" height="12" alt="">
+            Предидущая
+          </button>
+          <button class="modal-work__btn" type="button">
+            Следующая
+            <img class="modal-work__btn-arrow" src="img/arrow_right.svg" height="12" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal_project_4" class="modal">
+  <div class="modal__dialog">
+
+    <button class="modal__close" type="button" data-close>
+      <img src="img/modal-close.svg" width="34" height="39" alt="close">
+    </button>
+
+    <div class="modal-work">
+      <div class="modal-work__prewiews">
+        <img class="modal-work__photo" src="img/atelie big.png"  width="770" height="476" alt="">
+      </div>
+      <div class="modal-work__content">
+        <div class="modal-work__header">
+          <h3 class="modal-work__title">
+            Сайт по монтажу систем водоочистки
+          </h3>
+          <div class="modal-work__info">
+            Веб-сайты &nbsp; | &nbsp;  2021
+          </div>
+        </div>
+        <div class="modal-work__client">
+          <div><b>Савинцева Ольга</b></div>
+          <div class="reviews_company">Ателье</div>
+        </div>
+        <div class="modal-work__text">
+          <p>Сайт портфолио для Ателье<br>
+            Сайт сверстан без использования фрэймфорков, только html css js-библиотеки. <br> Сайт так и не был запущен в связи ненадобностью сайта дял заказчика.
+            </p>
+                        <b>Сайт содержит в себе:</b> 
+              <li>Форму обратной связи</li>
+              <li>Интерактивную яндекс карту</li>
+               <div class="modal__work-link">
+                <a href="https://xamanation.github.io/atelie/" target="_blank" class="btn">Перейти на сайт</a>
+               </div>
+          </div>
+        <div class="modal-work__footer">
+          <button class="modal-work__btn" type="button">
+            <img class="modal-work__btn-arrow" src="img/arrow left.svg" height="12" alt="">
+            Предидущая
+          </button>
+          <button class="modal-work__btn" type="button">
+            Следующая
+            <img class="modal-work__btn-arrow" src="img/arrow_right.svg" height="12" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal 2-->
+<div id="modal_hire_me" class="modal">
+  <div class="modal__dialog modal__dialog--sm">
+
+    <button class="modal__close" type="button" data-close>
+      <img src="img/modal-close.svg" width="34" height="39" alt="close">
+    </button>
+
+    <div class="contact">
+        <div class="contact-left">
+              <h3 class="modal__title mb-0">Связаться со мной</h3>   
+              <h4 class="modal-subtitle">Позвоните или напишите мне
+              </h4>   
+              <ul class="contact__info">
+                <li class="contact__info-item">
+                  <img class="contact__info-icon" src="img/phone.svg" height="20" alt="">
+                  89527300088
+                </li>
+                <li class="contact__info-item">
+                  <img class="contact__info-icon" src="img/mail.svg" height="20" alt="">
+                  xamanation93@yandex.ru
+                </li>
+                <li class="contact__info-item">
+                  <img class="contact__info-icon" src="img/telegram.svg" height="20" alt="">
+                  Telegram
+                </li>
+                <li class="contact__info-item">
+                  <img class="contact__info-icon" src="img/whatsapp.svg" height="20" alt="">
+                  WhatsApp
+                </li>
+              </ul>
+              
+              <form class="form" action="/" method="post">
+                <div class="form__group">
+                <label for="input-email" class="form__label">Почта</label>
+                <input type="text" class="form__input" name="input-email" id="input-email" placeholder="Ваша почта">
+                </div>
+                <div class="form__group">
+                  <label for="input-text" class="form__label">Сообщение</label>
+                  <textarea class="form__textarea" name="input-text" id="input-text" placeholder="Ваше сообщение " ></textarea>
+                  </div>
+                   <div class="text-right">
+                  <button class="btn" type="submit">Отправить</button>
+                </div>
+              </form>
+          </div><!--contact-left-->
+      </div>
+    </div>
+  </div>
+<!--modal 1-->
+ <script src="js/app.js"></script>
 
 </body>
 </html>
